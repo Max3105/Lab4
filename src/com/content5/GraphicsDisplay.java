@@ -164,9 +164,9 @@ public class GraphicsDisplay extends JPanel {
             arrow.moveTo(lineEnd.getX(), lineEnd.getY());
             // Вести левый "скат" стрелки в точку с относительными
             // координатами (5,20)
-            arrow.lineTo(arrow.getCurrentPoint().getX()+5, arrow.getCurrentPoint().getY()+20);
+            arrow.lineTo(arrow.getCurrentPoint().getX()+5, arrow.getCurrentPoint().getY()+20);// +5 +20
             // Вести нижнюю часть стрелки в точку с относительными // координатами (-10, 0)
-            arrow.lineTo(arrow.getCurrentPoint().getX()-10, arrow.getCurrentPoint().getY());
+            arrow.lineTo(arrow.getCurrentPoint().getX()-10, arrow.getCurrentPoint().getY());//-10
             // Замкнуть треугольник стрелки
             arrow.closePath();
             canvas.draw(arrow); // Нарисовать стрелку
@@ -205,9 +205,12 @@ public class GraphicsDisplay extends JPanel {
 
 
         }
-        Rectangle2D bounds = axisFont.getStringBounds("0", context);
-        Point2D.Double labelPos = xyToPoint(0,0);
-        canvas.drawString("0",(float)(labelPos.getX()-bounds.getX()),(float)(labelPos.getY()-bounds.getY()));
+        //Rectangle2D bounds = axisFont.getStringBounds("x", context);
+        //Point2D.Double labelPos = xyToPoint(maxX, 0);
+        //canvas.drawString("x", (float)(labelPos.getX()-bounds.getWidth()-10), (float)(labelPos.getY() + bounds.getY()));
+       // Rectangle2D bounds = axisFont.getStringBounds("x",context);
+       // Point2D.Double labelPos = xyToPoint(0,0);
+      //  canvas.drawString("0",(float)(labelPos.getX()-bounds.getX()),(float)(labelPos.getY()-bounds.getY()));
     }
     protected void paintMarkers(Graphics2D canvas){
 
